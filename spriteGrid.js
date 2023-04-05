@@ -1,5 +1,5 @@
 export class SpriteGrid {
-    constructor(runtime, spriteName, numberOfRows, numberOfColumns) {
+    constructor(runtime, spriteName, numberOfColumns, numberOfRows) {
         this.runtime = runtime;
         this.spriteName = spriteName;
         this.numberOfRows = numberOfRows;
@@ -92,8 +92,12 @@ export class SpriteGrid {
     }
 }
 
-// Needed to initialize the spriteGrid object and attach it to the runtime object so that it's scoped Globally
-function initializeSpriteGrid(runtime, spriteName, numberOfRows, numberOfColumns) {
-    const spriteGrid = new SpriteGrid(runtime, spriteName, numberOfRows, numberOfColumns);
-    runtime.spriteGrid = spriteGrid;
+// Needed to initialize the spriteGrids object and attach it to the runtime object so that it's scoped Globally
+function initializeSpriteGrid(runtime, objectName, spriteName, numberOfColumns, numberOfRows) {
+    // Error check to make sure the grid doesn't already exist
+    if (!runtime.spriteGrids) {
+        runtime.spriteGrids = {};
+    }
+    // Create a new SpriteGrid instance and store it in the spriteGrids object
+    runtime.spriteGrids[objectName] = new SpriteGrid(runtime, spriteName, numberOfColumns, numberOfRows);
 }
