@@ -22,7 +22,7 @@ This script creates paginated grids of sprites. This is useful for inventory sys
 ### Setup
 You need a sprite object named `align` in your Layout. This is used for the coordinates of spawning your grid. It represents the top-left position of your grid.
 
-You will also need all of the sprites you want spawned in the grid to be in a single sprite object and in a single animation. Each object should be on a seperate frame of that animation.
+You will also need all of the sprites you want spawned in the grid to be in a single sprite object and in a single animation. Each individual sprite should be on a seperate frame of that animation.
 
 ### initializeSpriteGrid()
 This method takes 5 arguments:
