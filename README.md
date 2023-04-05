@@ -22,8 +22,8 @@ You will also need all of the sprites you want spawned in the grid to be in a si
 This method takes 4 arguments:
 - runtime - this stays as it is and it allows the script to connect to Construct 3's runtime object
 - sprite name (string) - the name of the sprite you want to show in the grid
-- rows (int)
 - columns (int)
+- rows (int)
 ```sh
 initializeSpriteGrid(runtime, "core", 2, 4);
 ```
