@@ -61,3 +61,16 @@ This example would take you to page 4 if it exists, if not, it will default to t
 ```sh
 runtime.spriteGrids.foo.changePage(4);
 ```
+
+### destroy()
+Destroy the grid.
+```sh
+runtime.spriteGrids.foo.destroy();
+```
+
+### updateSpriteName()
+Update the sprite name, creating a new grid in place of the old one using the new sprite name. Takes one argument:
+- spriteName (string) - the name of the sprite you want to show in the grid
+```sh
+runtime.spriteGrids.foo.updateSpriteName("bar");
+```
