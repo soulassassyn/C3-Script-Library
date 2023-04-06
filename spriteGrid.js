@@ -28,6 +28,7 @@ export class SpriteGrid {
 
         const alignObject = this.runtime.objects.align;
         const positionAlign = alignObject.getFirstPickedInstance();
+		const currentLayer = positionAlign.layer.name;
         const ogPAX = positionAlign.x;
         const ogPAY = positionAlign.y;
         const framesPerPage = this.numberOfRows * this.numberOfColumns;
@@ -43,7 +44,7 @@ export class SpriteGrid {
         for (let row = 0; row < this.numberOfRows; row++) {
             for (let col = 0; col < this.numberOfColumns; col++) {
                 if (frameIndex < totalFrames) {
-                    const newInstance = spriteObject.createInstance("partSelectUI", 0, 0);
+					const newInstance = spriteObject.createInstance(currentLayer, 0, 0);
 					
 					// Fills gridUIDs array with UID of created instance
 					// Used for clearGrid()

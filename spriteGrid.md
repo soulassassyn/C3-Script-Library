@@ -16,7 +16,7 @@ initalizeSpriteGrid(runtime, "foo");
 
 4. Creat an animation inside the new object also named `foo`. This is the animation that will be used. If you want to use multiple frames, the grid will be populated with each frame of the animation. Otherwise, the grid will be populated with the single frame of the animation.
 
-5. Add a sprite object to your layout and name it `align`. This is the object that will be used to align the grid. It represents the top-left position of the grid.
+5. Add a sprite object to your layout and name it `align`. This is the object that will be used to align the grid. It represents the top-left position of the grid. The grid will also be created on the same layer as this object.
 
 6. In your `Event Sheet`, create a new `On start of layout` event and add the following code:
 ```sh
