@@ -3,9 +3,7 @@
 This is a library of custom functions and classes for Construct 3. We create helpful scripts that solve common use-cases. Feel free to browse the documentation and use any of these you might find helpful!
 
 ### Installation
-Use any of the code in any of the .js files by either copy/pasting directly into a new Script in Construct 3 or,
-
-Right-click on the `Scripts` folder and select `Import scripts` and add them from there.
+Each script has a `Setup` section that will tell you how to import the script into your project.
 
 ### Follow Us!
 Check us out on itch.io to see what we're up to!

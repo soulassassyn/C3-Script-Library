@@ -2,7 +2,7 @@
 This script allows you to detect when the mouse is hovering over an object. It also allows you to detect when the mouse is no longer hovering over an object.
 
 ### Setup
-This class is exported and needs to be imported into your project's main.js file. You can do this by adding the following line to the top of your main.js file:
+This class is exported and needs to be imported into your project's `main.js` file. You can do this by adding the following line to the top of your main.js file:
 ```sh
 import { MouseHover } from "./mouseHover.js";
 ```
