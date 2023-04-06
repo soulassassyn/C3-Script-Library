@@ -1,9 +1,10 @@
 export class MouseHoverEffect {
-    constructor(runtime, objectName, mouseObjectName = 'Mouse', scaleUpFactor = 1.25, tweenDuration = 0.1) {
+    constructor(runtime, objectName, scaleUpFactor = 1.25, scaleDownFactor = 1, tweenDuration = 0.1, mouseObjectName = 'Mouse') {
         this.runtime = runtime;
         this.objectName = objectName;
         this.mouseObjectName = mouseObjectName;
         this.scaleUpFactor = scaleUpFactor;
+		this.scaleDownFactor = scaleDownFactor;
         this.tweenDuration = tweenDuration;
 
         this.setupEventListeners();
@@ -35,8 +36,8 @@ export class MouseHoverEffect {
 			} else {
 				if (instance.hovered) {
 					instance.hovered = false;
-					const scaleAmountX = 1
-					const scaleAmountY = 1
+					const scaleAmountX = this.scaleDownFactor;
+					const scaleAmountY = this.scaleDownFactor;
 					instance.behaviors.Tween.startTween("scale", [scaleAmountX, scaleAmountY], this.tweenDuration, "linear");
 				}
 			}
