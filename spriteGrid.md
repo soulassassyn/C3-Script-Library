@@ -11,8 +11,8 @@ This method takes 5 arguments:
 - runtime - this stays as it is and it allows the script to connect to Construct 3's runtime object
 - object name (string) - this is the name of the grid object
 - sprite name (string) - the name of the sprite you want to show in the grid
-- columns (int)
-- rows (int)
+- columns (number) - the number of columns you want in your grid
+- rows (number) - the number of rows you want in your grid
 ```sh
 initializeSpriteGrid(runtime, "foo", "core", 2, 4);
 ```
