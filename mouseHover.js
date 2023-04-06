@@ -25,8 +25,6 @@ export class MouseHoverEffect {
 		for (let i = 0; i < instances.length; i++) {
 			const instance = instances[i];
 
-			console.log(instance.width);
-			console.log(this.scaleUpFactor);
 			if (instance.containsPoint(mouseX, mouseY)) {
 				if (!instance.hovered) {
 					instance.hovered = true;
