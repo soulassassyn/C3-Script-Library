@@ -11,7 +11,8 @@ After that, you can initialize the class by adding the following line inside of 
 const mouseHover = new MouseHover(runtime, "foo");
 ```
 
-Finally, make sure you have a `Mouse` object in your layout. This is used to detect the mouse position.
+Make sure you have a `Mouse` object in your layout. This is used to detect the mouse position.
+Make sure to add the `Tween` behavior to the object you want to scale up when the mouse is hovering over it.
 
 ### MouseHover()
 This method requires 2 arguments and takes 3 optional argument:
