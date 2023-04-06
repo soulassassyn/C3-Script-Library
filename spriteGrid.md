@@ -38,7 +38,7 @@ runtime.spriteGrids.foo.previousPage();
 
 ### changePage()
 Allows the querying of a specific page. Takes one argument:
-- page number (int)
+- page number (number) - the page number you want to go to
 
 This example would take you to page 4 if it exists, if not, it will default to the last page available.
 ```sh
