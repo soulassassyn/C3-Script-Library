@@ -1,13 +1,20 @@
 export class SpriteGrid {
-    constructor(runtime, spriteName, numberOfColumns, numberOfRows) {
+    constructor(runtime, spriteName, numberOfColumns = 3, numberOfRows = 3, gap = 0) {
         this.runtime = runtime;
         this.spriteName = spriteName;
         this.numberOfRows = numberOfRows;
         this.numberOfColumns = numberOfColumns;
+		this.gap = gap;
         this.currentPage = 0;
 		this.gridUIDs = [];
     }
-	
+		
+	updateSpriteName(newSpriteName) {
+		this.spriteName = newSpriteName;
+		this.clearGrid();
+		this.createGrid(this.currentPage);
+	}
+
     create() {
         this.createGrid(this.currentPage);
     }
@@ -15,26 +22,35 @@ export class SpriteGrid {
     createGrid(page) {
         const spriteObject = this.runtime.objects[this.spriteName];
         const tempInstance = spriteObject.createInstance(0, 0, 0);
-        const totalFrames = tempInstance.animation.frameCount;
-        const gap = 0;
+        let totalFrames = tempInstance.animation.frameCount;
+        const gap = this.gap;
         tempInstance.destroy();
 
         const alignObject = this.runtime.objects.align;
         const positionAlign = alignObject.getFirstPickedInstance();
         const ogPAX = positionAlign.x;
         const ogPAY = positionAlign.y;
-
         const framesPerPage = this.numberOfRows * this.numberOfColumns;
-        let frameIndex = framesPerPage * page;
+        let frameIndex = 0;
+		
+		if (totalFrames > 1) {
+			frameIndex = framesPerPage * page;
+		} else {
+			totalFrames = framesPerPage;
+		}
+		
+		
         for (let row = 0; row < this.numberOfRows; row++) {
             for (let col = 0; col < this.numberOfColumns; col++) {
                 if (frameIndex < totalFrames) {
                     const newInstance = spriteObject.createInstance("partSelectUI", 0, 0);
+					
 					// Fills gridUIDs array with UID of created instance
 					// Used for clearGrid()
 					this.gridUIDs.push(newInstance.uid);
                     newInstance.setAnimation(this.spriteName);
-                    newInstance.animationFrame = frameIndex;
+					newInstance.animationFrame = frameIndex;
+						
                     newInstance.x = positionAlign.x;
                     newInstance.y = positionAlign.y;
 
@@ -51,18 +67,15 @@ export class SpriteGrid {
         }
         positionAlign.x = ogPAX;
         positionAlign.y = ogPAY;
-		console.log(this.gridUIDs);
     }
 
     changePage(newPage) {
-		console.log("changePage() called");
         this.currentPage = newPage;
         this.clearGrid();
         this.createGrid(newPage);
     }
 
 	nextPage() {
-		console.log("nextPage() called");
 		const spriteObject = this.runtime.objects[this.spriteName];
 		const tempInstance = spriteObject.createInstance(0, 0, 0);
 		const totalFrames = tempInstance.animation.frameCount;
@@ -75,14 +88,12 @@ export class SpriteGrid {
 	}
 
 	previousPage() {
-		console.log("previousPage() called");
 		if (this.currentPage - 1 >= 0) {
 			this.changePage(this.currentPage - 1);
 		}
 	}
 
     clearGrid() {
-		console.log("clearGrid() called");
 		for (let i = 0; i < this.gridUIDs.length; i++)
 		{
 			const forDestroy = this.runtime.getInstanceByUid(this.gridUIDs[i]);
@@ -90,14 +101,16 @@ export class SpriteGrid {
 		}
 		this.gridUIDs = [];
     }
+
 }
 
 // Needed to initialize the spriteGrids object and attach it to the runtime object so that it's scoped Globally
-function initializeSpriteGrid(runtime, objectName, spriteName, numberOfColumns, numberOfRows) {
-    // Error check to make sure the grid doesn't already exist
-    if (!runtime.spriteGrids) {
+export function initializeSpriteGrid(runtime, spriteName, numberOfColumns, numberOfRows, gap) {
+	// Error check to make sure the grid doesn't already exist
+    if (!runtime.spriteGrids) 
+	{
         runtime.spriteGrids = {};
     }
     // Create a new SpriteGrid instance and store it in the spriteGrids object
-    runtime.spriteGrids[objectName] = new SpriteGrid(runtime, spriteName, numberOfColumns, numberOfRows);
+    runtime.spriteGrids[spriteName] = new SpriteGrid(runtime, spriteName, numberOfColumns, numberOfRows, gap);
 }

@@ -2,21 +2,38 @@
 This script creates paginated grids of sprites. This is useful for inventory systems or menu items.
 
 ### Setup
-You need a sprite object named `align` in your Layout. This is used for the coordinates of spawning your grid. It represents the top-left position of your grid.
+1. This class is exported and needs to be imported into your project's `main.js` file. You can do this by adding the following line to the top of your main.js file:
+```sh
+import { SpriteGrid } from "./spriteGrid.js";
+```
 
-You will also need all of the sprites you want spawned in the grid to be in a single sprite object and in a single animation. Each individual sprite should be on a seperate frame of that animation.
+2. After that, you can initialize the class by adding the following line inside of the `OnBeforeProjectStart` function:
+```sh
+initalizeSpriteGrid(runtime, "foo");
+```
+
+3. Add a sprite object to your layout and name it `foo`. This is the object that will be spawned.
+
+4. Creat an animation inside the new object also named `foo`. This is the animation that will be used. If you want to use multiple frames, the grid will be populated with each frame of the animation. Otherwise, the grid will be populated with the single frame of the animation.
+
+5. Add a sprite object to your layout and name it `align`. This is the object that will be used to align the grid. It represents the top-left position of the grid.
+
+6. In your `Event Sheet`, create a new `On start of layout` event and add the following code:
+```sh
+runtime.spriteGrids.foo.create();
+```
+
+7. Now run your game and you should see a grid of the `foo` sprites.
+
+## Methods
 
 ### initializeSpriteGrid()
-This method takes 5 arguments:
+This method takes 2 arguments and takes 3 optional arguments:
 - runtime - this stays as it is and it allows the script to connect to Construct 3's runtime object
-- object name (string) - this is the name of the grid object
-- sprite name (string) - the name of the sprite you want to show in the grid
-- columns (number) - the number of columns you want in your grid
-- rows (number) - the number of rows you want in your grid
-```sh
-initializeSpriteGrid(runtime, "foo", "core", 2, 4);
-```
-This will initialize and scope the grid globally to `runtime.spriteGrids.foo`
+- spriteName (string) - the name of the sprite you want to show in the grid
+- [optional] columns (number) - the number of columns you want in your grid. Defaults to 3
+- [optional] rows (number) - the number of rows you want in your grid. Defaults to 3
+- [optional] gap (number) - the gap between each sprite in the grid. Defaults to 0
 
 ### create()
 Create the grid.

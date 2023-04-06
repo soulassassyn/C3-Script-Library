@@ -29,6 +29,7 @@ export class MouseHoverEffect {
 			if (instance.containsPoint(mouseX, mouseY)) {
 				if (!instance.hovered) {
 					instance.hovered = true;
+					instance.zElevation = 99;
 					const scaleAmountX = this.scaleUpFactor;
 					const scaleAmountY = this.scaleUpFactor;
 					instance.behaviors.Tween.startTween("scale", [scaleAmountX, scaleAmountY], this.tweenDuration, "linear");
@@ -36,6 +37,7 @@ export class MouseHoverEffect {
 			} else {
 				if (instance.hovered) {
 					instance.hovered = false;
+					instance.zElevation = 0;
 					const scaleAmountX = this.scaleDownFactor;
 					const scaleAmountY = this.scaleDownFactor;
 					instance.behaviors.Tween.startTween("scale", [scaleAmountX, scaleAmountY], this.tweenDuration, "linear");
