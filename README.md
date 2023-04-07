@@ -1,6 +1,6 @@
 # C3-Script-Library
 ## Introduction
-This is a library of custom functions and classes for Construct 3. We create helpful scripts that solve common use-cases. Feel free to browse the documentation and use any of these you might find helpful!
+This is a library of custom functions and classes for Construct 3. I create helpful scripts that solve common use-cases. Feel free to browse the documentation and use any of these you might find helpful!
 
 These scripts are recommended for users who are comfortable with JavaScript and Construct 3. If you're not comfortable with Construct 3, we recommend you start with the [Construct 3 tutorials](https://www.construct.net/en/tutorials).
 
@@ -10,10 +10,9 @@ Each script has a `Setup` section that will tell you how to use the script in yo
 These scripts were written with modularity in mind and the Setup sections are designed to get you up and running. However, please feel free to tweak these scripts to fit your needs. If you end up making something even better, please consider contributing it back to the community! We'd love to see what you come up with!
 
 ### Follow Us!
-Check us out on itch.io to see what we're up to!
+Check me out on itch.io to see what I'm up to!
 
 - [ilovepixelart](https://ilovepixelart.itch.io/)
-- [Robotpencil](https://robotpencil.itch.io/)
 
 # Documentation
 The name of the JS files are used as headers in this readme so you can easily ctrl+F to search for the docs on the exact script you're looking for.
