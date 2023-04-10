@@ -45,6 +45,38 @@
 					"script-info": {
 						"purpose": "imports-for-events"
 					}
+				},
+				{
+					"name": "script.js",
+					"type": "application/javascript",
+					"sid": 615378354743730,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "mouseHover.js",
+					"type": "text/javascript",
+					"sid": 566002737056996,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "spriteGrid.js",
+					"type": "text/javascript",
+					"sid": 741720855911937,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "enemySpawner.js",
+					"type": "text/javascript",
+					"sid": 779398536240557,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
