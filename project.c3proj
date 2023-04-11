@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -43,7 +50,8 @@
 			"Sprite",
 			"Mouse",
 			"paused",
-			"notPaused"
+			"notPaused",
+			"demoButton"
 		],
 		"subfolders": []
 	},
@@ -55,14 +63,16 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Main",
+			"timeManager"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"Globals",
-			"Main"
+			"Main",
+			"EStimeManager"
 		],
 		"subfolders": []
 	},
@@ -268,5 +278,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": null
+	"firstLayout": "Main"
 }

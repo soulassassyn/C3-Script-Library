@@ -10,6 +10,9 @@ runOnStartup(async runtime =>
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
 	
+	const timeManager = new TimeManager();
+	runtime.timeManager = timeManager;
+	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 });
 
@@ -18,9 +21,6 @@ async function OnBeforeProjectStart(runtime)
 	// Code to run just before 'On start of layout' on
 	// the first layout. Loading has finished and initial
 	// instances are created and available to use here.
-	
-    const timeManager = new TimeManager();
-	runtime.timeManager = timeManager;
 
 	
 // 	initializeSpriteGrid(runtime, runtime.objects.rarityBox.name, 3, 1, 40);
