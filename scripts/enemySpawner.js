@@ -20,7 +20,7 @@ export class EnemySpawner {
         return { enemyInstance, enemyWeapon, enemyEngine };
     }
 	
-	spawnWeapon(x, y, frame = 0, template = "enemy") {
+	spawnEnemyPart(x, y, frame = 0, template = "enemy") {
 		const enemyWeaponClass = this.runtime.objects["weapon"];
 		
 		const enemyWeapon = enemyWeaponClass.createInstance(this.layer, x, y, "", template);
@@ -28,17 +28,7 @@ export class EnemySpawner {
 		enemyWeapon.animationFrame = frame;
 		return enemyWeapon;
 	}
-	
-	spawnEngine(x, y, frame = 0, template = "enemy") {
-		const enemyEngineClass = this.runtime.objects["engine"];
 		
-		const enemyEngine = enemyEngineClass.createInstance(this.layer, x, y, "", template);
-		enemyEngine.isVisible = true;
-		enemyEngine.animationFrame = frame;
-		return enemyEngine;
-	
-	}
-	
 	updateAttachments(enemyInstance, enemyWeapon, enemyEngine) {
 		enemyWeapon.x = enemyInstance.x;
 		enemyWeapon.y = enemyInstance.y;

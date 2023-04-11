@@ -1,0 +1,48 @@
+export class TimeManager {
+  constructor() {
+    this.realTimeStart = Date.now();
+    this.gameTimeStart = Date.now();
+    this.gameTimePaused = false;
+    this.gameTimeScale = 1;
+    this.lastFrameTime = Date.now();
+  }
+
+  getRealTime() {
+    return Date.now() - this.realTimeStart; // Return time in milliseconds
+  }
+
+  getGameTime() {
+    if (this.gameTimePaused) {
+      return this.gameTimePausedAt - this.gameTimeStart; // Return time in milliseconds
+    }
+    return (Date.now() - this.gameTimeStart) * this.gameTimeScale; // Return time in milliseconds
+  }
+
+  setGameTimeScale(scale) {
+    if (!this.gameTimePaused) {
+      this.gameTimeStart = Date.now() - this.getGameTime() / scale;
+    }
+    this.gameTimeScale = scale;
+  }
+
+  pauseGameTime() {
+    if (!this.gameTimePaused) {
+      this.gameTimePaused = true;
+      this.gameTimePausedAt = Date.now();
+    }
+  }
+
+  resumeGameTime() {
+    if (this.gameTimePaused) {
+      this.gameTimeStart += Date.now() - this.gameTimePausedAt;
+      this.gameTimePaused = false;
+    }
+  }
+
+  getDeltaTime() {
+    const currentTime = Date.now();
+    const deltaTime = currentTime - this.lastFrameTime;
+    this.lastFrameTime = currentTime;
+    return deltaTime;
+  }
+}

@@ -5,10 +5,46 @@
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
 	"uniqueId": "mtda0dlj4l9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"staticTimeText",
+			"realTimeText",
+			"Sprite",
+			"Mouse",
+			"paused",
+			"notPaused"
+		],
 		"subfolders": []
 	},
 	"autosaveData": null,
@@ -24,7 +60,10 @@
 		"subfolders": []
 	},
 	"eventSheets": {
-		"items": [],
+		"items": [
+			"Globals",
+			"Main"
+		],
 		"subfolders": []
 	},
 	"rootFileFolders": {
@@ -47,7 +86,7 @@
 					}
 				},
 				{
-					"name": "script.js",
+					"name": "timeManager.js",
 					"type": "application/javascript",
 					"sid": 615378354743730,
 					"script-info": {
