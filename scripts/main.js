@@ -30,6 +30,7 @@ async function OnBeforeProjectStart(runtime)
 // 	const mouseHoverShip = new MouseHoverEffect(runtime, "gridShip", 2.3, 2);
 // 	const mouseHoverWeapon = new MouseHoverEffect(runtime, "gridWeapon", 2.3, 2);
 // 	const mouseHoverEngine = new MouseHoverEffect(runtime, "gridEngine", 2.3, 2);
+	const mouseHoverUpgradeObject = new MouseHoverEffect(runtime, "upgradeObject", 1.1);
 	
 // 	// Enemy spawner
 // 	const enemySpawner = new EnemySpawner(runtime);

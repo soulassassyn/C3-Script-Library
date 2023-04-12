@@ -40,6 +40,13 @@
 			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "mtda0dlj4l9",
@@ -51,7 +58,8 @@
 			"Mouse",
 			"paused",
 			"notPaused",
-			"demoButton"
+			"demoButton",
+			"upgradeObject"
 		],
 		"subfolders": []
 	},
@@ -64,7 +72,8 @@
 	"layouts": {
 		"items": [
 			"Main",
-			"timeManager"
+			"timeManager",
+			"upgradeManager"
 		],
 		"subfolders": []
 	},
@@ -72,7 +81,8 @@
 		"items": [
 			"Globals",
 			"Main",
-			"EStimeManager"
+			"EStimeManager",
+			"ESupgradeManager"
 		],
 		"subfolders": []
 	},
@@ -208,7 +218,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "upgradeManager.json",
+					"type": "application/json",
+					"sid": 789194756586498,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
@@ -269,7 +288,7 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
