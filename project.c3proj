@@ -54,7 +54,7 @@
 		"items": [
 			"staticTimeText",
 			"realTimeText",
-			"Sprite",
+			"pauseBox",
 			"Mouse",
 			"paused",
 			"notPaused",
