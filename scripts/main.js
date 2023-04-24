@@ -10,7 +10,7 @@ runOnStartup(async runtime =>
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
 	
-	const timeManager = new TimeManager();
+	const timeManager = new TimeManager(runtime);
 	runtime.timeManager = timeManager;
 	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
