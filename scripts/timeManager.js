@@ -1,10 +1,34 @@
+// Construct r338 or later
 export class TimeManager {
-  constructor() {
+  constructor(runtime) {
     this.realTimeStart = Date.now();
     this.gameTimeStart = Date.now();
     this.gameTimePaused = false;
     this.gameTimeScale = 1;
     this.lastFrameTime = Date.now();
+    this.runtime = runtime;
+    this.objectTimeScales = new Map();
+  }
+
+  registerObject(instance) {
+    this.objectTimeScales.set(instance, 1);
+	console.log(instance & " registered.");
+  }
+
+  unregisterObject(instance) {
+    this.objectTimeScales.delete(instance);
+  }
+
+  setObjectTimeScale(instance, scale) {
+    this.objectTimeScales.set(instance, scale);
+  }
+
+  getObjectTimeScale(instance) {
+    return this.objectTimeScales.get(instance) || 1;
+  }
+
+  restoreObjectTimeScale(instance) {
+    this.objectTimeScales.set(instance, 1);
   }
 
   getRealTime() {
@@ -39,10 +63,10 @@ export class TimeManager {
     }
   }
 
-  getDeltaTime() {
+  getDeltaTime(instance) {
     const currentTime = Date.now();
     const deltaTime = currentTime - this.lastFrameTime;
     this.lastFrameTime = currentTime;
-    return deltaTime;
+    return deltaTime * this.getObjectTimeScale(instance);
   }
 }
