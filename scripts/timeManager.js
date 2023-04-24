@@ -21,9 +21,6 @@ export class TimeManager {
   }
 
   setGameTimeScale(scale) {
-//     if (!this.gameTimePaused) {
-//       this.gameTimeStart = Date.now() - this.getGameTime() / scale;
-//     }
     this.gameTimeScale = scale;
 	this.runtime.timeScale = scale;
   }
