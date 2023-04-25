@@ -3,7 +3,7 @@
 // Add Mouse object to project
 // Add Tween behavior to the object you want hovered
 
-export class MouseHoverEffect {
+export class MouseHover {
     constructor(runtime, objectName, scaleUpFactor = 1.25, scaleDownFactor = 1, tweenDuration = 0.1, mouseObjectName = 'Mouse') {
         this.runtime = runtime;
         this.objectName = objectName;

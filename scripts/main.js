@@ -1,6 +1,6 @@
 import { SpriteGrid } from "./spriteGrid.js";
 import { initializeSpriteGrid } from "./spriteGrid.js";
-import { MouseHoverEffect } from "./mouseHover.js";
+import { MouseHover } from "./mouseHover.js";
 import { EnemySpawner } from './enemySpawner.js';
 import { TimeManager } from './timeManager.js';
 
@@ -26,11 +26,11 @@ async function OnBeforeProjectStart(runtime)
 // 	initializeSpriteGrid(runtime, runtime.objects.rarityBox.name, 3, 1, 40);
 // 	initializeSpriteGrid(runtime, runtime.objects.gridShip.name, 3, 1, 40);
 	
-// 	// List of objects effected by the MouseHoverEffect class
-// 	const mouseHoverShip = new MouseHoverEffect(runtime, "gridShip", 2.3, 2);
-// 	const mouseHoverWeapon = new MouseHoverEffect(runtime, "gridWeapon", 2.3, 2);
-// 	const mouseHoverEngine = new MouseHoverEffect(runtime, "gridEngine", 2.3, 2);
-	const mouseHoverUpgradeObject = new MouseHoverEffect(runtime, "upgradeObject", 1.1);
+// 	// List of objects effected by the MouseHover class
+// 	const mouseHoverShip = new MouseHover(runtime, "gridShip", 2.3, 2);
+// 	const mouseHoverWeapon = new MouseHover(runtime, "gridWeapon", 2.3, 2);
+// 	const mouseHoverEngine = new MouseHover(runtime, "gridEngine", 2.3, 2);
+	const mouseHoverUpgradeObject = new MouseHover(runtime, "upgradeObject", 1.1);
 	
 // 	// Enemy spawner
 // 	const enemySpawner = new EnemySpawner(runtime);
