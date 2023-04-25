@@ -57,4 +57,15 @@ export class TimeManager {
     this.lastFrameTime = currentTime;
     return deltaTime;
   }
+  
+  pauseGame() {
+	if (this.gameTimePaused == false) {
+		this.setGameTimeScale(0);
+		this.pauseGameTime();
+	} else {
+		this.setGameTimeScale(1);
+		this.resumeGameTime();
+	}
+  }
+  
 }
